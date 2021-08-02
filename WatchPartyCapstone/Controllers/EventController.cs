@@ -34,7 +34,7 @@ namespace WatchPartyCapstone.Controllers
             {
                 return NotFound();
             }
-            return Ok(searchResults);
+            return Ok(searchResults.results);
         }
 
         // GET: api/<EventController>
