@@ -10,7 +10,8 @@ const _doesUserExist = (firebaseUserId) => {
       headers: {
         Authorization: `Bearer ${token}`
       }
-    }).then(resp => resp.ok));
+    }).then(resp => resp.json()
+  ));
 };
 
 const _saveUser = (userProfile) => {
@@ -40,6 +41,9 @@ export const login = (email, pw) => {
         logout();
 
         throw new Error("Something's wrong. The user exists in firebase, but not in the application database.");
+      }
+      else{
+        sessionStorage.setItem("userId", doesUserExist.id)
       }
     }).catch(err => {
       console.error(err);
