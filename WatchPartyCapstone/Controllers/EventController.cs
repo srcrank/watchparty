@@ -45,18 +45,23 @@ namespace WatchPartyCapstone.Controllers
         }
 
 
-        [HttpGet("user/:id")]
+        [HttpGet("user/{id}")]
         public IActionResult GetUserEventCards(int id)
         {
             return Ok(_eventRepository.GetEventbyCurrentUserId(id));
         }
 
-        [HttpPost("user/{id}")]
-        public IActionResult AddEvent(int id, Event events)
+        [HttpGet("{id}")]
+        public IActionResult GetEventById(int id)
         {
-            events.UserId = id;
+            return Ok(_eventRepository.GetEventById(id));
+        }
+
+        [HttpPost]
+        public IActionResult AddEvent(Event events)
+        {
             _eventRepository.AddEvent(events);
-            return CreatedAtAction("Get", new { id = events.Id }, events);
+            return CreatedAtAction("GetEventById", new { id = events.Id }, events);
         }
 
     }

@@ -9,6 +9,7 @@ namespace WatchPartyCapstone.Repositories
         void DeleteEvent(int id);
         List<EventCardModel> GetEventbyCurrentUserId(int id);
         List<EventCardModel> GetEventCards();
+        Event GetEventById(int id);
         void UpdateEvent(Event events);
     }
 }

@@ -42,6 +42,7 @@ namespace WatchPartyCapstone.Repositories
                             EventDate = DbUtils.GetDateTime(reader, "EventDate"),
                             CreatedDate = DbUtils.GetDateTime(reader, "CreatedDate"),
                             DisplayName = DbUtils.GetString(reader, "DisplayName"),
+                            EventTitle = DbUtils.GetString(reader, "EventTitle"),
                             Summary = DbUtils.GetString(reader, "Summary"),
                             MediaTitle = DbUtils.GetString(reader, "MediaTitle"),
                             PosterUrl = DbUtils.GetString(reader, "PosterUrl")
@@ -80,10 +81,50 @@ namespace WatchPartyCapstone.Repositories
                             EventDate = DbUtils.GetDateTime(reader, "EventDate"),
                             CreatedDate = DbUtils.GetDateTime(reader, "CreatedDate"),
                             DisplayName = DbUtils.GetString(reader, "DisplayName"),
+                            EventTitle = DbUtils.GetString(reader, "EventTitle"),
                             Summary = DbUtils.GetString(reader, "Summary"),
                             MediaTitle = DbUtils.GetString(reader, "MediaTitle"),
                             PosterUrl = DbUtils.GetString(reader, "PosterUrl")
                         });
+                    }
+                    reader.Close();
+                    return events;
+                }
+            }
+        }
+
+        //gets events by current logged in user, displays that user's display name. 
+        public Event GetEventById(int id)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT e.*
+                                        FROM Event e
+                                        WHERE e.Id = @Id";
+                    DbUtils.AddParameter(cmd, "@id", id);
+                    var reader = cmd.ExecuteReader();
+                    Event events = null;
+                    while (reader.Read())
+                    {
+                        events = new Event
+                        {
+                            IMDBId = DbUtils.GetString(reader, "IMDBId"),
+                            EventDate = DbUtils.GetDateTime(reader, "EventDate"),
+                            CreatedDate = DbUtils.GetDateTime(reader, "CreatedDate"),
+                            //DbUtils.AddParameter(cmd, "@isPublic", events.isPublic);
+                            UserId = DbUtils.GetInt(reader, "UserId"),
+                            EventTitle = DbUtils.GetString(reader, "EventTitle"),
+                            Summary = DbUtils.GetString(reader, "Summary"),
+                            MediaTitle = DbUtils.GetString(reader, "MediaTitle"),
+                            PosterUrl = DbUtils.GetString(reader, "PosterUrl"),
+                            ReleaseYear = DbUtils.GetInt(reader, "ReleaseYear"),
+                            IMDBUrl = DbUtils.GetString(reader, "IMDBUrl"),
+                            StreamUrl = DbUtils.GetString(reader, "StreamUrl"),
+                            OverView = DbUtils.GetString(reader, "OverView")
+                        };
                     }
                     reader.Close();
                     return events;

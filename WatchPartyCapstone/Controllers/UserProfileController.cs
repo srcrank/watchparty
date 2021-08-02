@@ -7,7 +7,7 @@ using WatchPartyCapstone.Repositories;
 namespace WatchPartyCapstone.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController, Authorize]
+    [ApiController]
     public class UserProfileController : ControllerBase
     {
         private readonly IUserProfileRepository _userProfileRepository;
@@ -31,7 +31,7 @@ namespace WatchPartyCapstone.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(userProfile);
         }
 
         [HttpPost]
