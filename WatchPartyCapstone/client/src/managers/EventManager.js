@@ -14,6 +14,12 @@ export const GetAllEvents = () => {
         .then((res) => res.json())
 };
 
+export const GetEventsByUser = (id) => {
+    return fetch(`${baseUrl}/event/user/${id}`).then((results) => results.json()
+    )
+}
+
+
 export const getEvent = () => {
     return fetch(`${baseUrl}/`)
         .then((res) => res.json())

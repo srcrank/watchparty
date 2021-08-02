@@ -4,6 +4,7 @@ import Login from "./Login";
 import Register from "./Register";
 import EventList from "./EventList";
 import EventForm from "./EventForm";
+import MyEventList from "./MyEventList";
 
 export default function ApplicationViews({ isLoggedIn }) {
   return (
@@ -15,7 +16,11 @@ export default function ApplicationViews({ isLoggedIn }) {
 
         <Route path="/event/add">
           <EventForm />
-        </Route>      
+        </Route> 
+
+        <Route path="/myevents">
+          <MyEventList />
+        </Route>     
 
         <Route path="/login">
           <Login />

@@ -79,7 +79,9 @@ const EventForm = () => {
             <Label for="MovieTitle">Select</Label>
             <Input type="select" name="select" id="exampleSelect">
               {/* <option>1</option> */}
-              {searchResults.map((movie) => (<option key={movie.imdbID}>{movie.title}</option>))}
+              {searchResults.map((movie) => (
+                <option key={movie.imdbID}>{movie.title}</option>
+              ))}
             </Input>
           </FormGroup>
         )}
@@ -91,7 +93,31 @@ const EventForm = () => {
             id="eventTitle"
             onChange={handleInputChange}
           ></Input>
-          
+
+          <Label>Event Summary</Label>
+          <Input
+            type="text"
+            placeholder="event summary"
+            id="summary"
+            onChange={handleInputChange}
+          ></Input>
+
+          <Label for="exampleDate">Event Date</Label>
+        <Input
+          type="date"
+          name="date"
+          id="eventDate"
+          placeholder="event date"
+          onChange={handleInputChange}
+        />
+
+          <Label>Event Title</Label>
+          <Input
+            type="text"
+            placeholder="event title"
+            id="eventTitle"
+            onChange={handleInputChange}
+          ></Input>
         </FormGroup>
         {/* <Button onClick={handleSave}>Submit</Button> */}
       </Form>
