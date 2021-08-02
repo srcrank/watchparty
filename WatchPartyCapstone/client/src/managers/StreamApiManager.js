@@ -4,7 +4,7 @@ import "firebase/auth";
 const baseUrl = '/api/event/stream'
 export const getToken = () => firebase.auth().currentUser.getIdToken();
 
-export const searchStreamApi = () => {
-    return fetch(baseUrl)
+export const searchStreamApi = (searchKeyword) => {
+    return fetch(`${baseUrl}?searchTerm=${searchKeyword}`)
         .then(res => res.json())
 }

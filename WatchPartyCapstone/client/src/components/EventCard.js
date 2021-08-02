@@ -14,7 +14,7 @@ export const EventCard = ({ eventData }) => {
                 <div>Posted By: {eventData.displayName}</div>
                 <div>Created on: {eventData.createdDate}</div>
                 <div>{eventData.posterUrl}</div>
-                <Link to={`/`}><button>Details</button></Link>
+                <Link to="/"><button>Details</button></Link>
             </CardBody>
         </Card>
     )

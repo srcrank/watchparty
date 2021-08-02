@@ -30,12 +30,12 @@ export const addEvent = (events) => {
     });
 }
 
-export const getCurrentUserPosts = () => {
-    return getToken().then((token) =>
-        fetch(`${baseUrl}/myposts`, {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }).then(resp => resp.json()));
-}
+// export const getCurrentUserPosts = () => {
+//     return getToken().then((token) =>
+//         fetch(`${baseUrl}/myposts`, {
+//             method: "GET",
+//             headers: {
+//                 Authorization: `Bearer ${token}`
+//             }
+//         }).then(resp => resp.json()));
+// }

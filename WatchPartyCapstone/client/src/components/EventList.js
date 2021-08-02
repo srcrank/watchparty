@@ -19,7 +19,7 @@ const EventList = () => {
 
     return (
         <>
-            <Link> Create Event </Link>
+            <Link to="/event/add"> Create Event </Link>
             <div>
                 <div>
                     {events.map((eventData) => (
