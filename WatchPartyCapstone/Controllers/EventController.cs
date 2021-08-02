@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using WatchPartyCapstone.Models;
 using WatchPartyCapstone.Repositories;
@@ -45,10 +46,11 @@ namespace WatchPartyCapstone.Controllers
         }
 
 
-        [HttpGet("user/{id}")]
+        [HttpGet("user")]
         public IActionResult GetUserEventCards(int id)
         {
-            return Ok(_eventRepository.GetEventbyCurrentUserId(id));
+            var user = GetCurrentUser();
+            return Ok(_eventRepository.GetEventbyCurrentUserId(user.Id));
         }
 
         [HttpGet("{id}")]
@@ -62,6 +64,39 @@ namespace WatchPartyCapstone.Controllers
         {
             _eventRepository.AddEvent(events);
             return CreatedAtAction("GetEventById", new { id = events.Id }, events);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutEvent(int id, Event events)
+        {
+            if (id != events.Id)
+            {
+                return BadRequest();
+            }
+
+            _eventRepository.UpdateEvent(events);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEvent(int id)
+        {
+            _eventRepository.DeleteEvent(id);
+            return NoContent();
+        }
+        private UserProfile GetCurrentUser()
+        //private methods are used as helpers
+        {
+            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            if (firebaseUserId != null)
+            {
+                return _userProfileRepository.GetByFirebaseUserId(firebaseUserId);
+            }
+            else
+            {
+                return null;
+
+            }
         }
 
     }

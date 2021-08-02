@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import MyEventCard from "./MyEventCard";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { GetEventsByUser } from "../managers/EventManager";
 
 const MyEventList = () => {
-    const [events, setEvents] = useState([]);
+    const [myEvents, setMyEvents] = useState([]);
+
 
     // const getPosts = () => {
     //     getAllPosts().then(posts => setPosts(posts));
     // }
+    
     const getEventsWithUserData = () => {
-        GetEventsByUser().then(events => setEvents(events));
+        GetEventsByUser().then(events => setMyEvents(events));
     }
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const MyEventList = () => {
         <>
             <div>
                 <div>
-                    {events.map((eventData) => (
+                    {myEvents.map((eventData) => (
                         <MyEventCard eventData={eventData} key={eventData.id} />
                     ))}
                 </div>
