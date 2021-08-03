@@ -147,27 +147,27 @@ BEGIN
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Mariano', 'Halvorson', 'quaerat', 'cprosacco@ebert.net', '74a75574-deb7-398d-b8c4-5d17d6fbd0a4');
+        ('Mariano', 'Halvorson', 'quaerat', 'cprosacco@x.net', '74a75574-deb7-398d-b8c4-5d17d6fbd0a4');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Krystina', 'Kuvalis', 'assumenda', 'dzboncak@yahoo.com', '15daebec-5158-35aa-ac44-1be0d66f848e');
+        ('Krystina', 'Kuvalis', 'assumenda', 'dzboncak@x.com', 'Q8GcpCzk6QTZeG2njIk8fM1B5zs2');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Chauncey', 'Borer', 'eum', 'stiedemann.constantin@gmail.com', '8779d568-f888-3c6a-8077-b2448cbfac1d');
+        ('Chauncey', 'Borer', 'eum', 'stiedemann.constantin@x.com', '8779d568-f888-3c6a-8077-b2448cbfac1d');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Mariam', 'McClure', 'quam', 'waelchi.jacky@hotmail.com', '3f92e79f-080f-3872-bad1-340d4a72afc2');
+        ('Mariam', 'McClure', 'quam', 'waelchi.jacky@x.com', 'mzqefy03YUW3qVUqmLDGffh4pXu1');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Jermain', 'Miller', 'repellat', 'dean09@yahoo.com', 'b3ef8174-9707-3b83-85c7-7df10bd88f50');
+        ('Jermain', 'Miller', 'repellat', 'test@x.com', 'VqiGMvZ2PlgSeAhlQSwUdutr6Or1');
 ​
 END
 ​
@@ -176,29 +176,29 @@ BEGIN
     USE [WatchParty]
 ​
     INSERT INTO [dbo].[Event]
-        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, IsPublic, MediaTitle, PosterUrl, ReleaseYear,IMDBUrl, StreamUrl, OverView)
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear,IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642', '2021-09-01 19:00:00', '2021-07-25 07:07:00', '1', 'Chucky in da house', 'Let''s watch chucky Get Married', '0', 'Bride of Chucky', 'https://image.tmdb.org/t/p/w780/mAGviFp1ufYM3EaZBSrjPiKPBt6.jpg', '1998', 'https://www.imdb.com/title/tt0144120', 'https://www.netflix.com/title/17670193/', 'Chucky hooks up with another murderous doll, the bridal gown-clad Tiffany, for a Route 66 murder spree with their unwitting hosts.');
+        ('tt5638642', '2021-09-01 19:00:00', '2021-07-25 07:07:00', '1', 'Chucky in da house', 'Let''s watch chucky Get Married', 'Bride of Chucky', 'https://image.tmdb.org/t/p/w780/mAGviFp1ufYM3EaZBSrjPiKPBt6.jpg', '1998', 'https://www.imdb.com/title/tt0144120', 'https://www.netflix.com/title/17670193/', 'Chucky hooks up with another murderous doll, the bridal gown-clad Tiffany, for a Route 66 murder spree with their unwitting hosts.');
 ​
     INSERT INTO [dbo].[Event]
-        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, IsPublic, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '2', 'Knowing is half the battle', 'It''s a fak movie with a fake summary', 0, 'G.I. Joe: The Rise of Cobra', 'https://image.tmdb.org/t/p/w780/mc9b25IAprHfsaOz0wTshOwGHcY.jpg', '2009', 'https://www.imdb.com/title/tt1046173', 'https://www.netflix.com/title/70108987/', 'From the Egyptian desert to deep below the polar ice caps, the elite G.I. JOE team uses the latest in next-generation spy and military equipment to fight the corrupt arms dealer Destro and the growing threat of the mysterious Cobra organization to prevent them from plunging the world into chaos.');
+        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '2', 'Knowing is half the battle', 'It''s a fak movie with a fake summary', 'G.I. Joe: The Rise of Cobra', 'https://image.tmdb.org/t/p/w780/mc9b25IAprHfsaOz0wTshOwGHcY.jpg', '2009', 'https://www.imdb.com/title/tt1046173', 'https://www.netflix.com/title/70108987/', 'From the Egyptian desert to deep below the polar ice caps, the elite G.I. JOE team uses the latest in next-generation spy and military equipment to fight the corrupt arms dealer Destro and the growing threat of the mysterious Cobra organization to prevent them from plunging the world into chaos.');
 ​
     INSERT INTO [dbo].[Event]
-        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, IsPublic, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '3', 'What else is there to say?  It''s Thor', 'Some fake summary here', '', 'Thor: Ragnarok', 'https://image.tmdb.org/t/p/w780/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg', '2017', 'https://www.imdb.com/title/tt3501632', 'https://www.disneyplus.com/movies/-/ZHk7aM5xTbW7', 'Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.');
+        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '3', 'What else is there to say?  It''s Thor', 'Some fake summary here', 'Thor: Ragnarok', 'https://image.tmdb.org/t/p/w780/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg', '2017', 'https://www.imdb.com/title/tt3501632', 'https://www.disneyplus.com/movies/-/ZHk7aM5xTbW7', 'Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.');
 ​
     INSERT INTO [dbo].[Event]
-        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, IsPublic, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '4', 'Who doesn''t like Ryan Reynolds', 'Some fake summary goes here', '', '6 Underground', 'https://image.tmdb.org/t/p/w780/lnWkyG3LLgbbrIEeyl5mK5VRFe4.jpg', '2019', 'https://www.imdb.com/title/tt8106534', 'https://www.netflix.com/title/81001887/', 'After faking his death, a tech billionaire recruits a team of international operatives for a bold and bloody mission to take down a brutal dictator.');
+        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '4', 'Who doesn''t like Ryan Reynolds', 'Some fake summary goes here', '6 Underground', 'https://image.tmdb.org/t/p/w780/lnWkyG3LLgbbrIEeyl5mK5VRFe4.jpg', '2019', 'https://www.imdb.com/title/tt8106534', 'https://www.netflix.com/title/81001887/', 'After faking his death, a tech billionaire recruits a team of international operatives for a bold and bloody mission to take down a brutal dictator.');
 ​
     INSERT INTO [dbo].[Event]
-        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, IsPublic, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '1', 'Vampires and Werewolves', 'More fake summary data', '', 'Underworld', 'https://image.tmdb.org/t/p/w780/zsnQ41UZ3jo1wEeemF0eA9cAIU0.jpg', '1003', 'https://www.imdb.com/title/tt0320691/', 'https://www.netflix.com/title/60031210/', 'Vampires and werewolves have waged a nocturnal war against each other for centuries. But all bets are off when a female vampire warrior named Selene, who''s famous for her strength and werewolf-hunting prowess, becomes smitten with a peace-loving male werewolf, Michael, who wants to end the war.');
+        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '1', 'Vampires and Werewolves', 'More fake summary data', 'Underworld', 'https://image.tmdb.org/t/p/w780/zsnQ41UZ3jo1wEeemF0eA9cAIU0.jpg', '1003', 'https://www.imdb.com/title/tt0320691/', 'https://www.netflix.com/title/60031210/', 'Vampires and werewolves have waged a nocturnal war against each other for centuries. But all bets are off when a female vampire warrior named Selene, who''s famous for her strength and werewolf-hunting prowess, becomes smitten with a peace-loving male werewolf, Michael, who wants to end the war.');
 ​
 END
 ​

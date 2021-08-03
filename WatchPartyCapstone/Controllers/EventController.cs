@@ -11,7 +11,7 @@ using WatchPartyCapstone.Repositories;
 namespace WatchPartyCapstone.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class EventController : ControllerBase
     {
         private readonly IEventRepository _eventRepository;
@@ -47,7 +47,7 @@ namespace WatchPartyCapstone.Controllers
 
 
         [HttpGet("user")]
-        public IActionResult GetUserEventCards(int id)
+        public IActionResult GetUserEventCards()
         {
             var user = GetCurrentUser();
             return Ok(_eventRepository.GetEventbyCurrentUserId(user.Id));
@@ -90,7 +90,7 @@ namespace WatchPartyCapstone.Controllers
             var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
             if (firebaseUserId != null)
             {
-                return _userProfileRepository.GetByFirebaseUserId(firebaseUserId);
+                return _userProfileRepository.GetByFireBaseUserId(firebaseUserId);
             }
             else
             {

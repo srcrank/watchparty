@@ -7,7 +7,7 @@ using WatchPartyCapstone.Repositories;
 namespace WatchPartyCapstone.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class UserProfileController : ControllerBase
     {
         private readonly IUserProfileRepository _userProfileRepository;
@@ -20,13 +20,13 @@ namespace WatchPartyCapstone.Controllers
         [HttpGet("{firebaseUserId}")]
         public IActionResult GetUserProfile(string firebaseUserId)
         {
-            return Ok(_userProfileRepository.GetByFirebaseUserId(firebaseUserId));
+            return Ok(_userProfileRepository.GetByFireBaseUserId(firebaseUserId));
         }
 
         [HttpGet("DoesUserExist/{firebaseUserId}")]
         public IActionResult DoesUserExist(string firebaseUserId)
         {
-            var userProfile = _userProfileRepository.GetByFirebaseUserId(firebaseUserId);
+            var userProfile = _userProfileRepository.GetByFireBaseUserId(firebaseUserId);
             if (userProfile == null)
             {
                 return NotFound();
@@ -41,7 +41,7 @@ namespace WatchPartyCapstone.Controllers
             _userProfileRepository.Add(userProfile);
             return CreatedAtAction(
                 nameof(GetUserProfile),
-                new { firebaseUserId = userProfile.FirebaseUserId },
+                new { firebaseUserId = userProfile.FireBaseUserId },
                 userProfile);
         }
     }
