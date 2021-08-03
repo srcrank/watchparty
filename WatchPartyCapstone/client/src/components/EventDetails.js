@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getEventCardById } from '../managers/EventManager';
 import { useParams } from 'react-router';
 
-export const EventDetails = () => {
+export const GetEventDetails = () => {
     const [eventDetails, setEventDetails] = useState({});
     const { eventId } = useParams();
 

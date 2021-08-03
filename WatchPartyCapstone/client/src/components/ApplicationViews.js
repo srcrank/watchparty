@@ -6,6 +6,7 @@ import EventList from "./EventList";
 import EventForm from "./EventForm";
 import MyEventList from "./MyEventList";
 import EditMyEvent from "./EventEditForm";
+import { GetEventDetails } from "./EventDetails";
 
 export default function ApplicationViews({ isLoggedIn }) {
   return (
@@ -17,15 +18,19 @@ export default function ApplicationViews({ isLoggedIn }) {
 
         <Route path="/event/add">
           <EventForm />
-        </Route> 
+        </Route>
 
         <Route path="/myevents">
           <MyEventList />
-        </Route> 
+        </Route>
 
         <Route path="/event/edit/:id">
           <EditMyEvent />
-          </Route>    
+        </Route>
+
+        <Route path="/event/detail/:id">
+          <GetEventDetails />
+        </Route>
 
         <Route path="/login">
           <Login />
@@ -34,8 +39,7 @@ export default function ApplicationViews({ isLoggedIn }) {
         <Route path="/register">
           <Register />
         </Route>
-
       </Switch>
     </main>
   );
-};
+}
