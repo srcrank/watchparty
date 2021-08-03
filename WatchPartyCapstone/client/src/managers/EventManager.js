@@ -69,7 +69,7 @@ export const addEvent = (events) => {
 //edit an event
 export const editEvent = (editedEvent) => {
     return getToken().then((token) =>
-    fetch(`${baseUrl}/${editedEvent.id}`, {
+    fetch(`${baseUrl}/edit/${editedEvent.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

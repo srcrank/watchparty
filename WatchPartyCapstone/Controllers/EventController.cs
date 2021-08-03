@@ -74,7 +74,7 @@ namespace WatchPartyCapstone.Controllers
             return CreatedAtAction("GetEventById", new { id = events.Id }, events);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("edit/{id}")]
         public IActionResult PutEvent(int id, Event events)
         {
             if (id != events.Id)

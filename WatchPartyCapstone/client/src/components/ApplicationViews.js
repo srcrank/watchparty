@@ -23,7 +23,7 @@ export default function ApplicationViews({ isLoggedIn }) {
           <MyEventList />
         </Route> 
 
-        <Route path="/event/edit">
+        <Route path="/event/edit/:id">
           <EditMyEvent />
           </Route>    
 

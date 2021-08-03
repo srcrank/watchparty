@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 import { addEvent } from "../managers/EventManager";
 import { searchStreamApi } from "../managers/StreamApiManager";
-import EventCard from "./EventCard";
 
 const EventForm = () => {
   const [watchEvent, setWatchEvent] = useState([]);
@@ -71,7 +70,6 @@ const EventForm = () => {
         streamUrl: movieSelection[0].streamingInfo.netflix.us.link,
         overView: movieSelection[0].overview
       };
-      console.log(savedEvent);
       addEvent(savedEvent).then(() => {
         history.push("/");
       });
