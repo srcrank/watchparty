@@ -43,7 +43,7 @@ namespace WatchPartyCapstone.Repositories
                     //loop through search results for keyword match in 'title' rather than match on all properties. case insensitive.
                     foreach (var streamResult in streamResults.results)
                     {
-                        Console.WriteLine(streamResult.title);
+                        
                         if (streamResult.title.Contains(searchTerm, StringComparison.CurrentCultureIgnoreCase))
                         {
                             filteredResults.results.Add(streamResult);

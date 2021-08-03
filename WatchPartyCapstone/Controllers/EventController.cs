@@ -56,7 +56,12 @@ namespace WatchPartyCapstone.Controllers
         [HttpGet("{id}")]
         public IActionResult GetEventById(int id)
         {
-            return Ok(_eventRepository.GetEventById(id));
+            var eventItem = _eventRepository.GetEventById(id);
+            if (eventItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(eventItem);
         }
 
         [HttpPost]
@@ -69,7 +74,7 @@ namespace WatchPartyCapstone.Controllers
             return CreatedAtAction("GetEventById", new { id = events.Id }, events);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("edit/{id}")]
         public IActionResult PutEvent(int id, Event events)
         {
             if (id != events.Id)
