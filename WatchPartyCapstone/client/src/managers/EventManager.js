@@ -9,10 +9,15 @@ export const getEventCardById = (id) => {
         .then(res => res.json())
 }
 
-export const GetAllEvents = () => {
-    return fetch(baseUrl)
-        .then((res) => res.json())
-};
+export const GetAllEvents = () => { 
+    return getToken().then((token) =>
+        fetch(baseUrl, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(res => res.json()));
+}
 
 
 export const GetEventsByUser = () => {
@@ -22,7 +27,7 @@ export const GetEventsByUser = () => {
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }).then(resp => resp.json()));
+        }).then(res => res.json()));
 }
 
 export const getEvent = () => {
