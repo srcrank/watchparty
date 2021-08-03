@@ -67,7 +67,7 @@ CREATE TABLE [Event]
     [Id] INT IDENTITY(1,1) NOT NULL ,
     [IMDBId] NVARCHAR (255) NOT NULL ,
     [EventDate] DATETIME NOT NULL ,
-    [CreatedDate] DATETIME NOT NULL ,
+    [CreatedDate] DATETIME DEFAULT(getdate()) NOT NULL ,
     [UserId] INT NOT NULL ,
     [EventTitle] NVARCHAR(255) NOT NULL ,
     [Summary] NVARCHAR(255) NOT NULL ,

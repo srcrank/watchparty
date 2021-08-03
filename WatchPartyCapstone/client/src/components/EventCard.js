@@ -13,7 +13,8 @@ export const EventCard = ({ eventData }) => {
                 <div>{eventData.eventDate}</div>
                 <div>Posted By: {eventData.displayName}</div>
                 <div>Created on: {eventData.createdDate}</div>
-                <div>{eventData.posterUrl}</div>
+                {/* resize these big ol' images*/}
+                <img src={eventData.posterUrl} alt="poster" />
                 <Link to="/"><button>Details</button></Link>
             </CardBody>
         </Card>

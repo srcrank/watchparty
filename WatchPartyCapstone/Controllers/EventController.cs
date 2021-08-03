@@ -62,6 +62,9 @@ namespace WatchPartyCapstone.Controllers
         [HttpPost]
         public IActionResult AddEvent(Event events)
         {
+            //passing currentuser id for adding event here
+            var user = GetCurrentUser();
+            events.UserId = user.Id;
             _eventRepository.AddEvent(events);
             return CreatedAtAction("GetEventById", new { id = events.Id }, events);
         }
