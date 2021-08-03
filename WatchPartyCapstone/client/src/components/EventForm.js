@@ -66,7 +66,7 @@ const EventForm = () => {
         mediaTitle: movieSelection[0].title,
         posterUrl: movieSelection[0].posterURLs[780],
         releaseYear: movieSelection[0].year,
-        imdbUrl: `https://imdb.com/title/${movieSelection[0].imdbID}`,
+        imdbUrl: `https://www.imdb.com/title/${movieSelection[0].imdbID}`,
         streamUrl: movieSelection[0].streamingInfo.netflix.us.link,
         overView: movieSelection[0].overview
       };

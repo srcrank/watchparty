@@ -6,7 +6,7 @@ import EventList from "./EventList";
 import EventForm from "./EventForm";
 import MyEventList from "./MyEventList";
 import EditMyEvent from "./EventEditForm";
-import { GetEventDetails } from "./EventDetails";
+import EventDetails from "./EventDetails";
 
 export default function ApplicationViews({ isLoggedIn }) {
   return (
@@ -28,8 +28,8 @@ export default function ApplicationViews({ isLoggedIn }) {
           <EditMyEvent />
         </Route>
 
-        <Route path="/event/detail/:id">
-          <GetEventDetails />
+        <Route path="/event/:id" exact>
+          {isLoggedIn ? <EventDetails /> : <Redirect to='/login' />}
         </Route>
 
         <Route path="/login">

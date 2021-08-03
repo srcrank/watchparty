@@ -22,7 +22,7 @@ export const MyEventCard = ({ eventData, getEvents }) => {
                 <div>Posted By: {eventData.displayName}</div>
                 <div>Created on: {eventData.createdDate}</div>
                 <img src={eventData.posterUrl} alt="poster" />
-                <Link to="/"><button>Details</button></Link>
+                <Link to={`/event/${eventData.id}`}><button>Details</button></Link>
                 <Link to={`/event/edit/${eventData.id}`}><button>Edit</button></Link>
                 <Button className="btn btn-danger" onClick={handleDelete}>
           Delete

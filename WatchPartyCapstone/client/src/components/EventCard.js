@@ -15,7 +15,7 @@ export const EventCard = ({ eventData }) => {
                 <div>Created on: {eventData.createdDate}</div>
                 {/* resize these big ol' images*/}
                 <img src={eventData.posterUrl} alt="poster" />
-                <Link to="/event/detail/:id"><button>Details</button></Link>
+                <Link to={`/event/${eventData.id}`}><button>Details</button></Link>
             </CardBody>
         </Card>
     )
