@@ -147,7 +147,7 @@ BEGIN
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Mariano', 'Halvorson', 'quaerat', 'cprosacco@x.net', '74a75574-deb7-398d-b8c4-5d17d6fbd0a4');
+        ('Mariano', 'Halvorson', 'quaerat', 'cprosacco@x.net', 'OmThFtb2tieSm0EqnNBy9J37B972');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
@@ -157,7 +157,7 @@ BEGIN
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Chauncey', 'Borer', 'eum', 'stiedemann.constantin@x.com', '8779d568-f888-3c6a-8077-b2448cbfac1d');
+        ('Chauncey', 'Borer', 'eum', 'stiedemann.constantin@x.com', 'hd0IIpDxmKZA6IffAWsvyA8RYRd2');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)

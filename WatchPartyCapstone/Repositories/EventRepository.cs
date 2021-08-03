@@ -93,7 +93,6 @@ namespace WatchPartyCapstone.Repositories
             }
         }
 
-        //gets events by current logged in user, displays that user's display name. 
         public Event GetEventById(int id)
         {
             using (var conn = Connection)
@@ -103,7 +102,8 @@ namespace WatchPartyCapstone.Repositories
                 {
                     cmd.CommandText = @"SELECT e.*
                                         FROM Event e
-                                        WHERE e.Id = @Id";
+                                            LEFT JOIN userProfile up ON e.userId = up.id
+                                        WHERE e.Id = @Id AND EventDate >= GETDATE()";
                     DbUtils.AddParameter(cmd, "@id", id);
                     var reader = cmd.ExecuteReader();
                     Event events = null;

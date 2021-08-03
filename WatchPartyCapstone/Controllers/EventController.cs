@@ -56,7 +56,12 @@ namespace WatchPartyCapstone.Controllers
         [HttpGet("{id}")]
         public IActionResult GetEventById(int id)
         {
-            return Ok(_eventRepository.GetEventById(id));
+            var eventItem = _eventRepository.GetEventById(id);
+            if (eventItem == null)
+            {
+                return NotFound();
+            }
+            return Ok(eventItem);
         }
 
         [HttpPost]
