@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using WatchPartyCapstone.Models;
 using WatchPartyCapstone.Repositories;
@@ -10,7 +11,7 @@ using WatchPartyCapstone.Repositories;
 namespace WatchPartyCapstone.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class EventController : ControllerBase
     {
         private readonly IEventRepository _eventRepository;
@@ -34,7 +35,7 @@ namespace WatchPartyCapstone.Controllers
             {
                 return NotFound();
             }
-            return Ok(searchResults);
+            return Ok(searchResults.results);
         }
 
         // GET: api/<EventController>
@@ -45,18 +46,60 @@ namespace WatchPartyCapstone.Controllers
         }
 
 
-        [HttpGet("user/:id")]
-        public IActionResult GetUserEventCards(int id)
+        [HttpGet("user")]
+        public IActionResult GetUserEventCards()
         {
-            return Ok(_eventRepository.GetEventbyCurrentUserId(id));
+            var user = GetCurrentUser();
+            return Ok(_eventRepository.GetEventbyCurrentUserId(user.Id));
         }
 
-        [HttpPost("user/{id}")]
-        public IActionResult AddEvent(int id, Event events)
+        [HttpGet("{id}")]
+        public IActionResult GetEventById(int id)
         {
-            events.UserId = id;
+            return Ok(_eventRepository.GetEventById(id));
+        }
+
+        [HttpPost]
+        public IActionResult AddEvent(Event events)
+        {
+            //passing currentuser id for adding event here
+            var user = GetCurrentUser();
+            events.UserId = user.Id;
             _eventRepository.AddEvent(events);
-            return CreatedAtAction("Get", new { id = events.Id }, events);
+            return CreatedAtAction("GetEventById", new { id = events.Id }, events);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutEvent(int id, Event events)
+        {
+            if (id != events.Id)
+            {
+                return BadRequest();
+            }
+
+            _eventRepository.UpdateEvent(events);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteEvent(int id)
+        {
+            _eventRepository.DeleteEvent(id);
+            return NoContent();
+        }
+        private UserProfile GetCurrentUser()
+        //private methods are used as helpers
+        {
+            var firebaseUserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            if (firebaseUserId != null)
+            {
+                return _userProfileRepository.GetByFireBaseUserId(firebaseUserId);
+            }
+            else
+            {
+                return null;
+
+            }
         }
 
     }

@@ -5,6 +5,6 @@ namespace WatchPartyCapstone.Repositories
     public interface IUserProfileRepository
     {
         void Add(UserProfile userProfile);
-        UserProfile GetByFirebaseUserId(string firebaseUserId);
+        UserProfile GetByFireBaseUserId(string firebaseUserId);
     }
 }

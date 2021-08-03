@@ -8,7 +8,7 @@ namespace WatchPartyCapstone.Repositories
     {
         public UserProfileRepository(IConfiguration configuration) : base(configuration) { }
 
-        public UserProfile GetByFirebaseUserId(string firebaseUserId)
+        public UserProfile GetByFireBaseUserId(string FireBaseUserId)
         {
             using (var conn = Connection)
             {
@@ -16,12 +16,12 @@ namespace WatchPartyCapstone.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                        SELECT up.Id, Up.FirebaseUserId, up.FirstName, up.LastName, up.DisplayName, 
+                        SELECT up.Id, Up.FireBaseUserId, up.FirstName, up.LastName, up.DisplayName, 
                                up.Email
                           FROM UserProfile up
-                         WHERE FirebaseUserId = @FirebaseuserId";
+                         WHERE FireBaseUserId = @FireBaseuserId";
 
-                    DbUtils.AddParameter(cmd, "@FirebaseUserId", firebaseUserId);
+                    DbUtils.AddParameter(cmd, "@FireBaseUserId", FireBaseUserId);
 
                     UserProfile userProfile = null;
 
@@ -31,7 +31,7 @@ namespace WatchPartyCapstone.Repositories
                         userProfile = new UserProfile()
                         {
                             Id = DbUtils.GetInt(reader, "Id"),
-                            FirebaseUserId = DbUtils.GetString(reader, "FirebaseUserId"),
+                            FireBaseUserId = DbUtils.GetString(reader, "FireBaseUserId"),
                             FirstName = DbUtils.GetString(reader, "FirstName"),
                             LastName = DbUtils.GetString(reader, "LastName"),
                             DisplayName = DbUtils.GetString(reader, "DisplayName"),
@@ -53,12 +53,12 @@ namespace WatchPartyCapstone.Repositories
                 conn.Open();
                 using (var cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"INSERT INTO UserProfile (FirebaseUserId, FirstName, LastName, DisplayName, 
+                    cmd.CommandText = @"INSERT INTO UserProfile (FireBaseUserId, FirstName, LastName, DisplayName, 
                                                                  Email)
                                         OUTPUT INSERTED.ID
-                                        VALUES (@FirebaseUserId, @FirstName, @LastName, @DisplayName, 
+                                        VALUES (@FireBaseUserId, @FirstName, @LastName, @DisplayName, 
                                                 @Email)";
-                    DbUtils.AddParameter(cmd, "@FirebaseUserId", userProfile.FirebaseUserId);
+                    DbUtils.AddParameter(cmd, "@FireBaseUserId", userProfile.FireBaseUserId);
                     DbUtils.AddParameter(cmd, "@FirstName", userProfile.FirstName);
                     DbUtils.AddParameter(cmd, "@LastName", userProfile.LastName);
                     DbUtils.AddParameter(cmd, "@DisplayName", userProfile.DisplayName);
@@ -70,11 +70,11 @@ namespace WatchPartyCapstone.Repositories
         }
 
         /*
-        public UserProfile GetByFirebaseUserId(string firebaseUserId)
+        public UserProfile GetByFireBaseUserId(string FireBaseUserId)
         {
             return _context.UserProfile
                        .Include(up => up.UserType) 
-                       .FirstOrDefault(up => up.FirebaseUserId == firebaseUserId);
+                       .FirstOrDefault(up => up.FireBaseUserId == FireBaseUserId);
         }
         public void Add(UserProfile userProfile)
         {

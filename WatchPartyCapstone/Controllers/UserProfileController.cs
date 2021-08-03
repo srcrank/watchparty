@@ -20,18 +20,18 @@ namespace WatchPartyCapstone.Controllers
         [HttpGet("{firebaseUserId}")]
         public IActionResult GetUserProfile(string firebaseUserId)
         {
-            return Ok(_userProfileRepository.GetByFirebaseUserId(firebaseUserId));
+            return Ok(_userProfileRepository.GetByFireBaseUserId(firebaseUserId));
         }
 
         [HttpGet("DoesUserExist/{firebaseUserId}")]
         public IActionResult DoesUserExist(string firebaseUserId)
         {
-            var userProfile = _userProfileRepository.GetByFirebaseUserId(firebaseUserId);
+            var userProfile = _userProfileRepository.GetByFireBaseUserId(firebaseUserId);
             if (userProfile == null)
             {
                 return NotFound();
             }
-            return Ok();
+            return Ok(userProfile);
         }
 
         [HttpPost]
@@ -41,7 +41,7 @@ namespace WatchPartyCapstone.Controllers
             _userProfileRepository.Add(userProfile);
             return CreatedAtAction(
                 nameof(GetUserProfile),
-                new { firebaseUserId = userProfile.FirebaseUserId },
+                new { firebaseUserId = userProfile.FireBaseUserId },
                 userProfile);
         }
     }

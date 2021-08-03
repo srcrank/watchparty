@@ -11,7 +11,7 @@ namespace WatchPartyCapstone.Models
         public int Id { get; set; }
 
         [StringLength(28, MinimumLength = 28)]
-        public string FirebaseUserId { get; set; }
+        public string FireBaseUserId { get; set; }
 
         [Required]
         [MaxLength(50)]

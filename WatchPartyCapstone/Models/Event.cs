@@ -12,7 +12,7 @@ namespace WatchPartyCapstone.Models
         public string IMDBId { get; set; }
         public DateTime EventDate { get; set; }
 
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
         public int UserId { get; set; }
         public string EventTitle { get; set; }
