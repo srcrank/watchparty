@@ -94,7 +94,7 @@ const EventForm = () => {
           </InputGroupAddon>
         </InputGroup>
 
-{/* placeholder for select ? */}
+
         {searchResults.length > 0 && (
           <FormGroup>
             <Label for="MovieTitle">Select a Movie</Label>
