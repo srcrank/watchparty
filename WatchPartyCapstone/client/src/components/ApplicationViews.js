@@ -17,15 +17,15 @@ export default function ApplicationViews({ isLoggedIn }) {
         </Route>
 
         <Route path="/event/add">
-          <EventForm />
+        {isLoggedIn ? <EventForm /> : <Redirect to="/login" />}
         </Route>
 
         <Route path="/myevents">
-          <MyEventList />
+        {isLoggedIn ? <MyEventList /> : <Redirect to="/login" />}
         </Route>
 
         <Route path="/event/edit/:id">
-          <EditMyEvent />
+        {isLoggedIn ? <EditMyEvent /> : <Redirect to="/login" />}
         </Route>
 
         <Route path="/event/:id" exact>
