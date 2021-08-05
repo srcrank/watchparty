@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getEventCardById } from "../managers/EventManager";
-import { Card, CardBody } from "reactstrap";
+import { Card, CardBody, Button } from "reactstrap";
 import { useParams, Link } from "react-router-dom";
 import { useHistory } from 'react-router';
 
@@ -32,7 +32,7 @@ const EventDetails = () => {
       <Card>
         <CardBody>
         <div>
-        <Link to={`/`}><button>Back to Events</button></Link>
+        <Link to={`/`}><Button color="primary" href="#pablo">Back to Events</Button></Link>
              <h2>{eventData.eventTitle}</h2>
              <p>{eventData.summary}</p>
              <p>On: {eventData.eventDate}</p>

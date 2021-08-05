@@ -2,33 +2,49 @@ import React, { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import { Link } from "react-router-dom";
 import { GetAllEvents } from "../managers/EventManager";
+import { Col, Container, Row } from "reactstrap";
 
 const EventList = () => {
-    const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
-    // const getPosts = () => {
-    //     getAllPosts().then(posts => setPosts(posts));
-    // }
-    const getEventsWithUserData = () => {
-        GetAllEvents().then(events => setEvents(events));
-    }
+  const getEventsWithUserData = () => {
+    GetAllEvents().then((events) => {
+      const filteredEvents = events.sort((a, b) => {
+        if (a.eventDate < b.eventDate) {
+          return -1;
+        }
+        if (a.eventDate > b.eventDate) {
+          return 1;
+        }
+        return 0;
+      });
 
-    useEffect(() => {
-        getEventsWithUserData();
-    }, []);
+      setEvents(filteredEvents);
+    });
+  };
 
-    return (
-        <>
-            <Link to="/event/add"> Create Event </Link>
+  // setEvents(events));
+
+  useEffect(() => {
+    getEventsWithUserData();
+  }, []);
+
+  return (
+    <>
+      <Link to="/event/add"> Create Event </Link>
+      <div>
+       
             <div>
-                <div>
-                    {events.map((eventData) => (
-                        <EventCard eventData={eventData} key={eventData.id} />
-                    ))}
-                </div>
+              
+                  {events.map((eventData) => (
+                    <EventCard eventData={eventData} key={eventData.id} />
+                  ))}
+               
             </div>
-        </>
-    )
-}
+          
+      </div>
+    </>
+  );
+};
 
 export default EventList;

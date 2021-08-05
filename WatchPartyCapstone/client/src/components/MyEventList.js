@@ -12,8 +12,25 @@ const MyEventList = () => {
     // }
     
     const getEventsWithUserData = () => {
-        GetEventsByUser().then(events => setMyEvents(events));
-    }
+        GetEventsByUser().then(events => {
+            const filteredEvents = events.sort((a, b) => {
+                if (a.eventDate < b.eventDate) {
+                  return -1;
+                }
+                if (a.eventDate > b.eventDate) {
+                  return 1;
+                }
+                return 0;
+              });
+      
+            setMyEvents(filteredEvents);
+        });
+    };
+            
+            
+            
+            // setMyEvents(events));
+    // }
 
     useEffect(() => {
         getEventsWithUserData();
