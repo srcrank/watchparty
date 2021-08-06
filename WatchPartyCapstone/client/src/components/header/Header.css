@@ -2,6 +2,12 @@ a.nav-link:hover{
     color: #CC8B65!important;
 }
 
+a.nav-link{
+    margin-left: 3em;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .nav-logo{
     width: 200px;
 
@@ -12,4 +18,17 @@ a.nav-link:hover{
     width: 100%;
     z-index: 1;
     margin-bottom: 120px;
+}
+
+.logout-link{
+    color: #CC8B65!important;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10em;
+}
+
+.logout-link:hover{
+    color:white!important;
+    text-decoration: underline;
+    font-weight: bold;
 }

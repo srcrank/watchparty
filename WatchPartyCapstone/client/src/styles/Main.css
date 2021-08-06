@@ -96,7 +96,7 @@ div.card-body{
 }
 
 .details-card{
-  width: 100rem;
+  width: 90rem;
   flex-direction: row-reverse!important;
   box-sizing: border-box;
   margin: 1em;
@@ -121,4 +121,15 @@ div.card-body{
 .details-page-button-container{
 margin-left: 2em;
 margin-top: 1em;
+}
+
+.detail-link{
+  color: #ce8357;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.detail-link:hover{
+  color: #feb300;
+  text-decoration: none;
 }

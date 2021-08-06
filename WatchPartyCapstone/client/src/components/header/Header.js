@@ -12,8 +12,7 @@ import {
 } from "reactstrap";
 import { logout } from "../../managers/AuthManager";
 import "./Header.css";
-import logo from "../../images/watchparty1.png"
-
+import logo from "../../images/watchparty1.png";
 
 export default function Header({ isLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,12 +22,14 @@ export default function Header({ isLoggedIn }) {
     <div className="nav-total-container">
       <Navbar style={{ backgroundColor: "#013328" }} light expand="md">
         <NavbarBrand tag={RRNavLink} to="/">
-        {/* <NavbarBrand tag={RRNavLink} to="/" className="text-white"> */}
-            <img alt=""
-                src={logo}
-                // width="30px" 
-                // height="30px" 
-                className="d-inline-block align-top nav-logo"/>
+          {/* <NavbarBrand tag={RRNavLink} to="/" className="text-white"> */}
+          <img
+            alt=""
+            src={logo}
+            // width="30px"
+            // height="30px"
+            className="d-inline-block align-top nav-logo"
+          />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -37,11 +38,7 @@ export default function Header({ isLoggedIn }) {
             {isLoggedIn && (
               <>
                 <NavItem>
-                  <NavLink
-                    tag={RRNavLink}
-                    to="/"
-                    className="text-white"
-                  >
+                  <NavLink tag={RRNavLink} to="/" className="text-white">
                     Events
                   </NavLink>
                 </NavItem>
@@ -73,7 +70,7 @@ export default function Header({ isLoggedIn }) {
             {isLoggedIn && (
               <>
                 <NavItem>
-                  <Link to={`/`} onClick={logout}>
+                  <Link className="logout-link" to={`/`} onClick={logout}>
                     Logout
                   </Link>
                   {/* <a aria-current="page" className="nav-link"
@@ -89,7 +86,11 @@ export default function Header({ isLoggedIn }) {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="text-white" tag={RRNavLink} to="/register">
+                  <NavLink
+                    className="text-white"
+                    tag={RRNavLink}
+                    to="/register"
+                  >
                     Register
                   </NavLink>
                 </NavItem>
