@@ -25,6 +25,8 @@ export default function RegisterUser() {
  };
 
   return (
+    <div> 
+      <div className="all-mighty-container"></div> 
     <Form onSubmit={registerClick}>
       <fieldset>
         <FormGroup>
@@ -56,5 +58,6 @@ export default function RegisterUser() {
         </FormGroup>
       </fieldset>
     </Form>
+    </div>
   );
 }

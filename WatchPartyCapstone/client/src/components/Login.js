@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useHistory, Link } from "react-router-dom";
 import { login } from "../managers/AuthManager";
+import "../styles/Main.css"
 
 export default function Login() {
   const history = useHistory();
@@ -17,8 +18,11 @@ export default function Login() {
   };
 
   return (
+    <div >
+      <div className="all-mighty-container"></div> 
+      <div className="list-total-container">
     <Form onSubmit={loginSubmit}>
-      <fieldset>
+      <fieldset >
         <FormGroup>
           <Label for="email">Email</Label>
           <Input id="email" type="text" class="w-25" autoFocus onChange={e => setEmail(e.target.value)} />
@@ -35,5 +39,8 @@ export default function Login() {
         </em>
       </fieldset>
     </Form>
+    </div>
+    </div>
+    
   );
 }

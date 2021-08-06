@@ -79,6 +79,8 @@ const EventForm = () => {
 
   return (
     <>
+    <div>
+    <div className="all-mighty-container"></div> 
       <Form>
         
         <InputGroup>
@@ -143,12 +145,13 @@ const EventForm = () => {
         </FormGroup>
         <Button onClick={handleSave}>Submit</Button>
       </Form>
-      <div>
+      {/* <div>
         {/* <div>
           {posts.map((post) => (
             <Post post={post} key={post.id} />
           ))}
-        </div> */}
+        </div>
+      </div> */}
       </div>
     </>
   );

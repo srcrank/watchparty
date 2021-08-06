@@ -1,0 +1,15 @@
+a.nav-link:hover{
+    color: #CC8B65!important;
+}
+
+.nav-logo{
+    width: 200px;
+
+}
+
+.nav-total-container{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 120px;
+}

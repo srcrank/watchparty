@@ -3,6 +3,7 @@ import EventCard from "./EventCard";
 import { Link } from "react-router-dom";
 import { GetAllEvents } from "../managers/EventManager";
 import { Col, Container, Row } from "reactstrap";
+import "../styles/Main.css"
 
 const EventList = () => {
   const [events, setEvents] = useState([]);
@@ -31,10 +32,10 @@ const EventList = () => {
 
   return (
     <>
-      <Link to="/event/add"> Create Event </Link>
-      <div>
-       
-            <div>
+    <div className="all-mighty-container"></div> 
+
+      <div className="list-total-container">
+            <div className="card-list">
               
                   {events.map((eventData) => (
                     <EventCard eventData={eventData} key={eventData.id} />

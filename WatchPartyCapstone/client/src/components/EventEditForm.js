@@ -56,6 +56,8 @@ const EditEventForm = () => {
 
   return (
     <>
+    <div> 
+    <div className="all-mighty-container"></div> 
       <Form onSubmit={handleSave}>
         <FormGroup>
           <Input
@@ -109,6 +111,7 @@ const EditEventForm = () => {
             <Post post={post} key={post.id} />
           ))}
         </div> */}
+      </div>
       </div>
     </>
   );

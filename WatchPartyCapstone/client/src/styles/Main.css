@@ -1,0 +1,126 @@
+/* .container .row > [class^="col"] {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color:#E5EDF5;
+} */
+
+body {
+  background-color: #e3dcd2 !important;
+}
+
+.all-mighty-container {
+  height: 120px;
+  width: 100%;
+}
+
+.card-style {
+  width: 23rem;
+  /* flex: 1 0 21%; */
+  box-sizing: border-box;
+  margin: 1em;
+  background-color: #f5f2ee !important;
+  box-shadow: 5px 5px 5px #c4c1bc;
+}
+
+.card-list {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+div.card-body{
+  align-content: space-between;
+}
+
+.card-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-button-container {
+  position: absolute;
+  bottom: 0px;
+}
+
+.card-info-and-buttons {
+  /* display: flex;
+  flex-direction: column;
+  height: auto; */
+ 
+  position: relative;
+  padding-bottom: 20px;
+  height: 100%;
+}
+
+.detail-button {
+  background-color: #ce8357 !important;
+  border: none !important;
+  margin: 3px;
+  /* box-shadow: 3px 3px 5px #c4c1bc; */
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  
+}
+
+.edit-button {
+  background-color: #eb8686 !important;
+  border: none !important;
+  margin: 3px;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.delete-button {
+  background-color: #e66868 !important;
+  border: none !important;
+  margin: 3px;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+
+.edit-button:hover {
+  background-color: #feb300 !important;
+}
+
+.detail-button:hover {
+  background-color: #feb300 !important;
+}
+
+.delete-button:hover {
+  background-color: #feb300 !important;
+}
+
+.card-text-label{
+  font-weight: bold;
+}
+
+.card-bodyandimg-container{
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.details-card{
+  width: 100rem;
+  flex-direction: row-reverse!important;
+  box-sizing: border-box;
+  margin: 1em;
+  background-color: #f5f2ee !important;
+  box-shadow: 5px 5px 5px #c4c1bc;
+}
+
+.detailimage{
+  width: 30rem!important;
+}
+
+.details-page-button{
+  background-color: #ce8357 !important;
+  border: none !important;
+  margin: 3px;
+  box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+}
+.details-page-button:hover {
+  background-color: #feb300 !important;
+}
+
+.details-page-button-container{
+margin-left: 2em;
+margin-top: 1em;
+}
