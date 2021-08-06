@@ -16,11 +16,11 @@ const EventDetails = () => {
     );
   };
 
+
   useEffect(() => {
     fetchEvent();
   }, []);
 
-  console.log(eventData);
 
   return (
     <>
