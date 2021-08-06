@@ -7,10 +7,12 @@ import EventForm from "./EventForm";
 import MyEventList from "./MyEventList";
 import EditMyEvent from "./EventEditForm";
 import EventDetails from "./EventDetails";
+import "../styles/Main.css";
 
 export default function ApplicationViews({ isLoggedIn }) {
   return (
     <main>
+ 
       <Switch>
         <Route path="/" exact>
           {isLoggedIn ? <EventList /> : <Redirect to="/login" />}
