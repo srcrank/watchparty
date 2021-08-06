@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { Card, CardBody } from "reactstrap";
 import { deleteEvent } from "../managers/EventManager";
+import * as moment from 'moment'
 
 export const MyEventCard = ({ eventData, getEvents }) => {
   const handleDelete = () => {
@@ -11,6 +12,9 @@ export const MyEventCard = ({ eventData, getEvents }) => {
       deleteEvent(eventData.id).then(() => getEvents());
     }
   };
+
+  const dateAndTime = moment(eventData.eventDate).format('MMMM Do YYYY, h:mm a')
+  const createdOn = moment(eventData.createdDate).format('MMMM Do YYYY')
 
   return (
     <Card className="card-style">
@@ -21,9 +25,9 @@ export const MyEventCard = ({ eventData, getEvents }) => {
         <h3>{eventData.eventTitle}</h3>
         <p>{eventData.summary}</p>
         <p><span className="card-text-label">Movie: </span>{eventData.mediaTitle}</p>
-        <p><span className="card-text-label">When: </span>{eventData.eventDate.split("T")[0]} at {eventData.eventDate.split("T")[1]}</p>
-        <p><span className="card-text-label">Posted By: </span>{eventData.displayName}</p>
-        <p><span className="card-text-label">Created on: </span>{eventData.createdDate.split("T")[0]}</p>
+        <p><span className="card-text-label">When: </span>{dateAndTime}</p>
+        <p><span className="card-text-label">Created By: </span>{eventData.displayName} on {createdOn}</p>
+        {/* <p><span className="card-text-label">Created on: </span>{createdOn}</p> */}
         </div>
         <div className="card-button-container">
           <Link to={`/event/${eventData.id}`}>

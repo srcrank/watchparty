@@ -8,6 +8,7 @@ import {
 } from "reactstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { editEvent, getEventCardById } from "../managers/EventManager";
+import "../styles/Form.css"
 
 const EditEventForm = () => {
   const [editWatchEvent, setEditWatchEvent] = useState([]);
@@ -58,9 +59,10 @@ const EditEventForm = () => {
     <>
     <div> 
     <div className="all-mighty-container"></div> 
-      <Form onSubmit={handleSave}>
+      <Form className="form-style" onSubmit={handleSave}>
         <FormGroup>
           <Input
+          className="form--input"
             type="hidden"
             name="id"
             id="id"
@@ -68,6 +70,7 @@ const EditEventForm = () => {
           ></Input>
           <Label>Event Title</Label>
           <Input
+          className="form--input"
             type="text"
             placeholder="event title"
             id="eventTitle"
@@ -77,6 +80,7 @@ const EditEventForm = () => {
 
           <Label>Event Summary</Label>
           <Input
+          className="form--input"
             type="text"
             placeholder="event summary"
             id="summary"
@@ -86,6 +90,7 @@ const EditEventForm = () => {
 
           <Label for="Date">Event Date</Label>
           <Input
+          className="form--input"
             type="date"
             name="date"
             id="eventDate"
@@ -95,6 +100,7 @@ const EditEventForm = () => {
           />
           <Label for="Time">Event Time</Label>
           <Input
+          className="form--input"
             type="time"
             name="time"
             id="eventTime"
@@ -103,7 +109,7 @@ const EditEventForm = () => {
             onChange={handleInputChange}
           />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button className="add-button">Submit</Button>
       </Form>
       <div>
         {/* <div>

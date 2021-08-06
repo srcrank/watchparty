@@ -13,6 +13,7 @@ import {
 } from "reactstrap";
 import { addEvent } from "../managers/EventManager";
 import { searchStreamApi } from "../managers/StreamApiManager";
+import "../styles/Form.css"
 
 const EventForm = () => {
   const [watchEvent, setWatchEvent] = useState([]);
@@ -81,16 +82,16 @@ const EventForm = () => {
     <>
     <div>
     <div className="all-mighty-container"></div> 
-      <Form>
+      <Form className="form-style">
         
         <InputGroup>
-          <Input
+          <Input className="form--input"
             placeholder="... search for a movie"
             id="searchKeyword"
             onChange={handleInputChange}
           />
           <InputGroupAddon addonType="append">
-            <Button color="secondary" onClick={mediaSearch}>
+            <Button className="search-button" onClick={mediaSearch}>
               search
             </Button>
           </InputGroupAddon>
@@ -100,7 +101,7 @@ const EventForm = () => {
         {searchResults.length > 0 && (
           <FormGroup>
             <Label for="MovieTitle">Select a Movie</Label>
-            <Input type="select" name="select" id="exampleSelect" placeholder="select a movie" onChange={getSelectedMovie}>
+            <Input className="form--input" type="select" name="select" id="exampleSelect" placeholder="select a movie" onChange={getSelectedMovie}>
               <option>select a movie</option>
               {searchResults.map((movie) => (
                 <option key={movie.imdbID}>{movie.title}</option>
@@ -111,6 +112,7 @@ const EventForm = () => {
         <FormGroup>
           <Label>Event Title</Label>
           <Input
+          className="form--input"
             type="text"
             placeholder="event title"
             id="eventTitle"
@@ -119,6 +121,7 @@ const EventForm = () => {
 
           <Label>Event Summary</Label>
           <Input
+          className="form--input"
             type="text"
             placeholder="event summary"
             id="summary"
@@ -127,6 +130,7 @@ const EventForm = () => {
 
           <Label for="Date">Event Date</Label>
         <Input
+        className="form--input"
           type="date"
           name="date"
           id="eventDate"
@@ -135,6 +139,7 @@ const EventForm = () => {
         />
         <Label for="Time">Event Time</Label>
         <Input
+        className="form--input"
           type="time"
           name="time"
           id="eventTime"
@@ -143,7 +148,7 @@ const EventForm = () => {
         />
 
         </FormGroup>
-        <Button onClick={handleSave}>Submit</Button>
+        <Button className="add-button" onClick={handleSave}>Submit</Button>
       </Form>
       {/* <div>
         {/* <div>

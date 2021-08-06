@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useHistory, Link } from "react-router-dom";
 import { login } from "../managers/AuthManager";
 import "../styles/Main.css"
+import "../styles/Login.css"
 
 export default function Login() {
   const history = useHistory();
@@ -17,25 +18,27 @@ export default function Login() {
       .catch(() => alert("Invalid email or password"));
   };
 
+  //className="list-total-container"
+
   return (
     <div >
       <div className="all-mighty-container"></div> 
-      <div className="list-total-container">
-    <Form onSubmit={loginSubmit}>
+      <div className="container--login">
+    <Form className="form--login" onSubmit={loginSubmit}>
       <fieldset >
         <FormGroup>
           <Label for="email">Email</Label>
-          <Input id="email" type="text" class="w-25" autoFocus onChange={e => setEmail(e.target.value)} />
+          <Input className="loginForm-control" id="email" type="text" class="w-25" autoFocus onChange={e => setEmail(e.target.value)} />
         </FormGroup>
         <FormGroup>
           <Label for="password">Password</Label>
-          <Input id="password" type="password" onChange={e => setPassword(e.target.value)} />
+          <Input className="loginForm-control" id="password" type="password" onChange={e => setPassword(e.target.value)} />
         </FormGroup>
         <FormGroup>
-          <Button>Login</Button>
+          <Button className="login-button">Login</Button>
         </FormGroup>
         <em>
-          Not registered? <Link to="register">Register</Link>
+          Don't have an account?{" "}<Link className= "signUp-Link" to="/register">{" "}Sign up</Link>
         </em>
       </fieldset>
     </Form>

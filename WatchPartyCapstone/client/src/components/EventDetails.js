@@ -4,6 +4,7 @@ import { Card, CardBody, Button, CardImg } from "reactstrap";
 import { useParams, Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import "../styles/Main.css";
+import * as moment from 'moment';
 
 const EventDetails = () => {
   const [eventData, setEventData] = useState([]);
@@ -16,6 +17,14 @@ const EventDetails = () => {
     );
   };
 
+//   const dateFixer = () => {
+//     // const date = new Date(eventData.eventDate);
+//     const cutDate = moment(eventData.eventDate).format('MMMM Do YYYY, h:mm:ss a')
+//     eventData.eventDate = cutDate
+// };
+
+
+const dateAndTime = moment(eventData.eventDate).format('MMMM Do YYYY, h:mm:ss a')
 
   useEffect(() => {
     fetchEvent();
@@ -49,7 +58,7 @@ const EventDetails = () => {
                 <p>{eventData.summary}</p>
                 <p>
                   <span className="card-text-label">When: </span>
-                  {eventData.eventDate}
+                  {dateAndTime}
                 </p>
                 <p>
                   <span className="card-text-label">Movie: </span>
