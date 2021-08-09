@@ -1,7 +1,7 @@
 # Front End Capstone for NSS Cohort 47
 ## watchparty
 ### Background
-Watchparty is an app that allows users to create events centerd around streaming movies off of netflix. This past year was spent indoors and social distancing. More than ever, people look for ways to connect with their friends online. This app works by accessing an external API of mvies that are available to stream. 
+Watchparty is an app that allows users to create events centerd around streaming movies off of netflix. This past year was spent indoors and social distancing. More than ever, people look for ways to connect with their friends online. This app works by accessing an external API of movies that are available to stream. 
 
 # Technology
 - React
@@ -9,6 +9,9 @@ Watchparty is an app that allows users to create events centerd around streaming
 - C#
 - .NET
 - SQL
+
+# DEMO
+![Alt Text](https://github.com/srcrank/watchparty/blob/src-datatesting/DEMO.gif)
 
 # ERD
 ![image](https://github.com/srcrank/watchparty/blob/src-datatesting/ERD.png)
