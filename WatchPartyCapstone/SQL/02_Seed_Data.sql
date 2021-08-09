@@ -147,27 +147,32 @@ BEGIN
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Mariano', 'Halvorson', 'quaerat', 'cprosacco@x.net', 'OmThFtb2tieSm0EqnNBy9J37B972');
+        ('Mariano', 'Halvorson', 'DellaR', 'cprosacco@x.net', 'OmThFtb2tieSm0EqnNBy9J37B972');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Krystina', 'Kuvalis', 'assumenda', 'dzboncak@x.com', 'Q8GcpCzk6QTZeG2njIk8fM1B5zs2');
+        ('Krystina', 'Kuvalis', 'CoriH', 'dzboncak@x.com', 'Q8GcpCzk6QTZeG2njIk8fM1B5zs2');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Chauncey', 'Borer', 'eum', 'stiedemann.constantin@x.com', 'hd0IIpDxmKZA6IffAWsvyA8RYRd2');
+        ('Chauncey', 'Borer', 'BCAwesome', 'stiedemann.constantin@x.com', 'hd0IIpDxmKZA6IffAWsvyA8RYRd2');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
-        ('Mariam', 'McClure', 'quam', 'waelchi.jacky@x.com', 'mzqefy03YUW3qVUqmLDGffh4pXu1');
+        ('Mariam', 'McClure', 'Mari235', 'waelchi.jacky@x.com', 'mzqefy03YUW3qVUqmLDGffh4pXu1');
 ​
     INSERT INTO [dbo].[UserProfile]
         (FirstName, LastName, DisplayName, Email, FireBaseUserId)
     VALUES
         ('Jermain', 'Miller', 'repellat', 'test@x.com', 'VqiGMvZ2PlgSeAhlQSwUdutr6Or1');
+
+    INSERT INTO [dbo].[UserProfile]
+        (FirstName, LastName, DisplayName, Email, FireBaseUserId)
+    VALUES
+        ('Salma', 'Crank', 'Sal98', 'salma@test.com', 'ugJ9ZHMYjVM7wUYTggMkpedkYQl1');
 ​
 END
 ​
@@ -178,27 +183,42 @@ BEGIN
     INSERT INTO [dbo].[Event]
         (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear,IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642', '2021-09-01 19:00:00', '2021-07-25 07:07:00', '1', 'Chucky in da house', 'Let''s watch chucky Get Married', 'Bride of Chucky', 'https://image.tmdb.org/t/p/w780/mAGviFp1ufYM3EaZBSrjPiKPBt6.jpg', '1998', 'https://www.imdb.com/title/tt0144120', 'https://www.netflix.com/title/17670193/', 'Chucky hooks up with another murderous doll, the bridal gown-clad Tiffany, for a Route 66 murder spree with their unwitting hosts.');
+        ('tt10676012', '8-13-2021 7:23:00 AM', '8/3/2021 9:05:54 PM', '1', 'Rom Com Night!', 'Im in the mood for a cheesy movie!', 'To All the Boys: Always and Forever', 'https://image.tmdb.org/t/p/w780/zdkJs9j6yKo9di0kjtctM01fSMv.jpg', '2021', 'https://www.imdb.com/title/tt10676012', 'https://www.netflix.com/title/81040397/', 'Senior year of high school takes center stage as Lara Jean returns from a family trip to Korea and considers her college plans — with and without Peter.');
 ​
     INSERT INTO [dbo].[Event]
         (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '2', 'Knowing is half the battle', 'It''s a fak movie with a fake summary', 'G.I. Joe: The Rise of Cobra', 'https://image.tmdb.org/t/p/w780/mc9b25IAprHfsaOz0wTshOwGHcY.jpg', '2009', 'https://www.imdb.com/title/tt1046173', 'https://www.netflix.com/title/70108987/', 'From the Egyptian desert to deep below the polar ice caps, the elite G.I. JOE team uses the latest in next-generation spy and military equipment to fight the corrupt arms dealer Destro and the growing threat of the mysterious Cobra organization to prevent them from plunging the world into chaos.');
+        ('tt0250494','8-10-2021 8:30:00 PM', '8/6/2021 5:29:42 AM', '2', 'Love this movie!', 'Legally Blonde is the best!', 'Legally Blonde', 'https://image.tmdb.org/t/p/w780/4ABNnmkVpzplrEVQWt1piITT0Ey.jpg', '2001', 'https://www.imdb.com/title/tt0250494', 'https://www.netflix.com/title/60021025/', 'Elle Woods has it all. Shes the president of her sorority, a Hawaiian Tropic girl, Miss June in her campus calendar, and, above all, a natural blonde. She dates the cutest fraternity boy on campus and wants nothing more than to be Mrs. Warner Huntington III. But, theres just one thing stopping Warner from popping the question: Elle is too blonde.');
 ​
     INSERT INTO [dbo].[Event]
         (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '3', 'What else is there to say?  It''s Thor', 'Some fake summary here', 'Thor: Ragnarok', 'https://image.tmdb.org/t/p/w780/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg', '2017', 'https://www.imdb.com/title/tt3501632', 'https://www.disneyplus.com/movies/-/ZHk7aM5xTbW7', 'Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the destruction of his home-world and the end of Asgardian civilization, at the hands of a powerful new threat, the ruthless Hela.');
+        ('tt0091042','2021-09-01 19:00:00', '2021-08-11 19:00:00', '3', 'Ferris is the best', 'lets play hooky!', 'Ferris Bueller''s Day Off', 'https://image.tmdb.org/t/p/w780/9LTQNCvoLsKXP0LtaKAaYVtRaQL.jpg', '1986', 'https://www.imdb.com/title/tt0091042', 'https://www.netflix.com/title/498716/', 'After high school slacker Ferris Bueller successfully fakes an illness in order to skip school for the day, he goes on a series of adventures throughout Chicago with his girlfriend Sloane and best friend Cameron, all the while trying to outwit his wily school principal and fed-up sister.');
 ​
     INSERT INTO [dbo].[Event]
         (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '4', 'Who doesn''t like Ryan Reynolds', 'Some fake summary goes here', '6 Underground', 'https://image.tmdb.org/t/p/w780/lnWkyG3LLgbbrIEeyl5mK5VRFe4.jpg', '2019', 'https://www.imdb.com/title/tt8106534', 'https://www.netflix.com/title/81001887/', 'After faking his death, a tech billionaire recruits a team of international operatives for a bold and bloody mission to take down a brutal dictator.');
+        ('tt0446029','2021-09-01 19:00:00', '2021-09-01 19:00:00', '4', 'Seven Evil Exes', 'The perfect breakup movie.', 'Scott Pilgrim vs. the World', 'https://image.tmdb.org/t/p/w780/g5IoYeudx9XBEfwNL0fHvSckLBz.jpg', '2010', 'https://www.imdb.com/title/tt0446029', 'https://www.netflix.com/title/70117312/', 'As bass guitarist for a garage-rock band, Scott Pilgrim has never had trouble getting a girlfriend; usually, the problem is getting rid of them. But when Ramona Flowers skates into his heart, he finds she has the most troublesome baggage of all: an army of ex-boyfriends who will stop at nothing to eliminate him from her list of suitors.');
 ​
     INSERT INTO [dbo].[Event]
         (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
     VALUES
-        ('tt5638642','2021-09-01 19:00:00', '2021-09-01 19:00:00', '1', 'Vampires and Werewolves', 'More fake summary data', 'Underworld', 'https://image.tmdb.org/t/p/w780/zsnQ41UZ3jo1wEeemF0eA9cAIU0.jpg', '1003', 'https://www.imdb.com/title/tt0320691/', 'https://www.netflix.com/title/60031210/', 'Vampires and werewolves have waged a nocturnal war against each other for centuries. But all bets are off when a female vampire warrior named Selene, who''s famous for her strength and werewolf-hunting prowess, becomes smitten with a peace-loving male werewolf, Michael, who wants to end the war.');
+        ('tt1375666','2021-09-01 19:00:00', '2021-09-01 19:00:00', '6', 'and it was all a dream....', 'or was it??', 'Inception', 'https://image.tmdb.org/t/p/w780/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg', '2010', 'https://www.imdb.com/title/tt1375666', 'https://www.netflix.com/title/70131314/', 'Cobb, a skilled thief who commits corporate espionage by infiltrating the subconscious of his targets is offered a chance to regain his old life as payment for a task considered to be impossible: "inception", the implantation of another person''s idea into a target''s subconscious.');
+
+    INSERT INTO [dbo].[Event]
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+    VALUES
+        ('tt0829482','2021-09-01 19:00:00', '2021-08-11 19:00:00', '4', 'McLovin''s the Name', 'McLovin''s the game', 'Superbad', 'https://image.tmdb.org/t/p/w780/ek8e8txUyUwd2BNqj6lFEerJfbq.jpg', '2007', 'https://www.imdb.com/title/tt0829482', 'https://www.netflix.com/title/70058023/', 'Two co-dependent high school seniors are forced to deal with separation anxiety after their plan to stage a booze-soaked party goes awry.');
+   
+   INSERT INTO [dbo].[Event]
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+    VALUES
+        ('tt4925292','2021-09-01 19:00:00', '2021-08-13 19:00:00', '6', 'Such a good movie!', 'Does anyone else want to watch it?', 'Lady Bird', 'https://image.tmdb.org/t/p/w780/iySFtKLrWvVzXzlFj7x1zalxi5G.jpg', '2017', 'https://www.imdb.com/title/tt4925292', 'https://www.netflix.com/title/80205227/', 'Lady Bird McPherson, a strong willed, deeply opinionated, artistic 17 year old comes of age in Sacramento. Her relationship with her mother and her upbringing are questioned and tested as she plans to head off to college.');
+
+    INSERT INTO [dbo].[Event]
+        (IMDBId, EventDate, CreatedDate, UserId, EventTitle, Summary, MediaTitle, PosterUrl, ReleaseYear, IMDBUrl, StreamUrl, OverView)
+    VALUES
+        ('tt0087538','2021-09-01 19:00:00', '2021-09-01 19:00:00', '4', 'wax on, wax off', 'Maybe I can learn a few life lessons too?', 'The Karate Kid', 'https://image.tmdb.org/t/p/w780/kpDjt9N52zUZYMqe7TCCn04DZvp.jpg', '1984', 'https://www.imdb.com/title/tt0087538', 'https://www.netflix.com/title/60036164/', 'After some violent confrontations with his new classmates, Daniel LaRusso learns karate from Japanese handyman Mr. Miyagi, in order to defend himself.');
 ​
 END
 ​
