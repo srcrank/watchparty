@@ -11,7 +11,7 @@ Watchparty is an app that allows users to create events centerd around streaming
 - SQL
 
 # ERD
-![image]()
+![image](https://github.com/srcrank/watchparty/blob/src-datatesting/ERD.png)
 
 # WireFrame
-![image]()
+![image](https://github.com/srcrank/watchparty/blob/src-datatesting/wireframe.png)
